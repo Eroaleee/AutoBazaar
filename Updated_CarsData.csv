@@ -1,4 +1,4 @@
-Brand,Model,YearOfFabrication,Kilometres,Location,PriceEuro,ClientID,LicensePlateNumber,VIN
+Brand,Model,YearOfFabrication,Kilometres,Location,PriceEuro,SellerID,LicensePlateNumber,VIN
 Abarth,500,2009,100400,Cluj,7900,JMKCJXPO,CJ 865 VEN,ZFAK0EG4NDGZ9QCH8
 Abarth,595,2020,49300,Prahova,18988,RQHDEVXL,PH 038 RYW,ZFAAP2EIE4BW23TO9
 Abarth,595,2020,29330,Bucuresti,18990,PNWCNNIQ,B 269 NBV,ZFAA8G5P5S806HGG3
