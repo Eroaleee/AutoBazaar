@@ -1,21 +1,25 @@
 # SOURCE C:/Users/alexa/OneDrive/Desktop/Facultate/anu2/sem2/BD/proiect_bd/script_proiect.sql;
+/*          Folositi pentru cale simbolul "/", NU "\"         */ 
+
+
+/*#############################################################*/
+/*        PARTEA 1 - STERGEREA SI RECREAREA BAZEI DE DATE      */
 
 DROP DATABASE bazarAutoDB;
 CREATE DATABASE bazarAutoDB;
 USE bazarAutoDB;
 
-CREATE TABLE tblSeller (
-	idSeller SMALLINT(3) PRIMARY KEY AUTO_INCREMENT,
-	email VARCHAR(50) UNIQUE,
-	parola VARCHAR(30) NOT NULL,
-	nume VARCHAR(20) NOT NULL,
-	prenume VARCHAR(50) NOT NULL,
-	cnp VARCHAR(13) NOT NULL UNIQUE
-);
+/*#############################################################*/
 
-CREATE TABLE tblCumparator (
-	idCumparator SMALLINT(3) PRIMARY KEY AUTO_INCREMENT,
-	email VARCHAR(50) NOT NULL UNIQUE,
+
+
+
+/*#############################################################*/
+/*                  PARTEA 2 - CREAREA TABELELOR              */
+
+CREATE TABLE tblUseri (
+	idUser SMALLINT(3) PRIMARY KEY AUTO_INCREMENT,
+	email VARCHAR(50) UNIQUE,
 	parola VARCHAR(30) NOT NULL,
 	nume VARCHAR(20) NOT NULL,
 	prenume VARCHAR(50) NOT NULL,
@@ -47,22 +51,19 @@ CREATE TABLE tblFacturi (
 	FOREIGN KEY (buyerID) REFERENCES tblCumparator(idCumparator) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-DESCRIBE tblSeller;
-DESCRIBE tblCumparator;
-DESCRIBE tblMasini;
-DESCRIBE tblFacturi;
+/*#############################################################*/
 
-LOAD DATA INFILE 'E:/wamp64/tmp/data_seller.csv' 
- INTO TABLE bazarAutoDB.tblSeller 
+
+
+
+/*#############################################################*/
+/*         PARTEA 3 - INSERAREA INREGISTRARILOR IN TABELE      */
+
+LOAD DATA INFILE 'E:/wamp64/tmp/data_useri.csv' 
+ INTO TABLE bazarAutoDB.tblUseri
  FIELDS TERMINATED BY ',' 
  LINES TERMINATED BY '\n' 
- (nume, prenume, cnp, parola, idSeller);
- 
-LOAD DATA INFILE 'E:/wamp64/tmp/data_clients.csv' 
- INTO TABLE bazarAutoDB.tblCumparator 
- FIELDS TERMINATED BY ',' 
- LINES TERMINATED BY '\n' 
- (prenume, nume, cnp, parola, idCumparator, email); 
+ (nume, prenume, cnp, parola, idUser);
  
 LOAD DATA INFILE 'E:/wamp64/tmp/data_masini.csv' 
  INTO TABLE bazarAutoDB.tblMasini 
@@ -70,6 +71,18 @@ LOAD DATA INFILE 'E:/wamp64/tmp/data_masini.csv'
  LINES TERMINATED BY '\n' 
  (marca, model, anFabricatie, km, pretEuro, sellerID, nrInmatriculare, vin);  
 #Brand,Model,YearOfFabrication,Kilometres,PriceEuro,SellerID,LicensePlateNumber,VIN
+
+/*#############################################################*/
+
+
+
+/*#############################################################*/
+/*  PARTEA 4 - VIZUALIZAREA STUCTURII BD SI A INREGISTRARILOR  */
+
+DESCRIBE tblSeller;
+DESCRIBE tblCumparator;
+DESCRIBE tblMasini;
+DESCRIBE tblFacturi;
 
 SELECT * FROM tblSeller;
 SELECT * FROM tblCumparator;
