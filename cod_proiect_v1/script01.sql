@@ -1,4 +1,4 @@
-# SOURCE C:/Users/alexa/OneDrive/Desktop/Facultate/anu2/sem2/BD/proiect_bd/script01.sql;
+# SOURCE C:/Users/Andrei/Desktop/script01.sql;
 /*          Folositi pentru cale simbolul "/", NU "\"         */ 
 
 
@@ -47,7 +47,7 @@ CREATE TABLE tblMasini (
 );
 
 CREATE TABLE tblTranzactii (
-	nrOrdine SMALLINT(4) PRIMARY KEY,
+	idTranzactie SMALLINT(4) PRIMARY KEY,
 	userID SMALLINT(3) NOT NULL,
 	bazarID SMALLINT(2) NOT NULL,
 	
@@ -89,17 +89,29 @@ INSERT INTO tblUseri VALUES (563,"JMKCJXPO","Barbu","Corina","2900424420262"),
 INSERT INTO tblBazaruri VALUES ("AG","loc. Pitesti str. Egalitatii nr. 34", 1, 1000),
 ("DB","loc. Gaesti str. Serban Cioculescu nr. 193",2,4300),
 ("CJ", "loc. Cluj-Napoca str. Craiului nr. 92",3,7400),
-("CT","loc. Vama Veche str. Principala nr. 2",4,3020);
+("BV","loc. Brasov str. Carpatilor nr. 2",4,3020),
+("BC", "loc. Bacau str. Mihai Eminescu nr. 10", 5, 1500),
+("TM", "loc. Timisoara str. Avram Iancu nr. 25", 6, 2000),
+("IS", "loc. Iasi str. Stefan cel Mare nr. 30", 7, 1800),
+("CT", "loc. Constanta str. Tomis nr. 5", 8, 2200),
+("MS", "loc. Mures str. Libertatii nr. 15", 9, 1200),
+("VL", "loc. Valcea str. Calea lui Traian nr. 20", 10, 1700);
 
 INSERT INTO tblMasini VALUES ("Abarth","500",2009,100400,7900,3,"CJ 865 VEN","ZFAK0EG4NDGZ9QCH8"),
 ("Mercedes-Benz","A",NULL,8000,40301,1,"AG 227 YEC","WDBAJE0OHMND9PPX7"),
-("Renault","Kadjar",2019,139000,14900,1,"CT 720 YWZ","VF1XSQ2F8GIZ0MEZ3"),
-("Alfa Romeo","159",NULL,299000,3990,4,"CT 129 GXV","ZARLXW2L73LGOV2X5"),
+("Renault","Kadjar",2019,139000,14900,8,"CT 720 YWZ","VF1XSQ2F8GIZ0MEZ3"),
+("Alfa Romeo","159",NULL,299000,3990,4,"BV 129 GXV","ZARLXW2L73LGOV2X5"),
 ("Dacia","Dokker",2018,103616,12980,1,"HR 390 MLD","UUBWJ0DQO05G82B57"),
 ("Dacia","Duster",2019,97700,14875,2,"IF 814 ZAC","UUBXZK0MF9SAI47V8"),
 ("Kia","Ceed",NULL,110457,6800,2,"IF 358 ZLU","KNM9FA0F0A2IM881"),
 ("Mercedes-Benz","E",2017,144700,28989,1,"AG 639 KFS","WDBV3WON9KQKJPUX2"),
-("Mercedes-Benz","Sprinter",NULL,270000,5900,3,"BH 800 HGO","WDBGG6KH2HM1I0828");
+("Mercedes-Benz","Sprinter",NULL,270000,5900,3,"BH 800 HGO","WDBGG6KH2HM1I0828"),
+("BMW", "Seria 3", 2015, 90000, 20000, 5, "BC 123 ABC", "WBA3N9C50FK214843"),
+("Volkswagen", "Golf", 2018, 75000, 15000, 6, "TM 456 DEF", "WVWZZZ1KZJP005381"),
+("Ford", "Focus", 2019, 60000, 14700, 7, "IS 789 GHI", "WF05XXGCC5KR17436"),
+("Toyota", "Corolla", 2017, 85000, 16000, 8, "CT 987 JKL", "JTNKU3JE40J509913"),
+("Hyundai", "i30", 2020, 50000, 15450, 9, "MS 654 MNO", "KMHH55LC8LU103758"),
+("Audi", "A4", 2016, 95000, 21000, 10, "VL 321 PQR", "WAUZZZ8K5GA091245");
 
 INSERT INTO tblTranzactii VALUES (1, 876, 2),
 (2, 539, 3),
