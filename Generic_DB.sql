@@ -27,7 +27,7 @@ CREATE TABLE tblUseri (
 
 CREATE TABLE tblBazaruri (
 	judet VARCHAR(50) NOT NULL UNIQUE,
-	adresa VARCHAR(50) NOT NULL UNIQUE,
+	adresa VARCHAR(50) NOT NULL,
 	idBazar SMALLINT(2) PRIMARY KEY AUTO_INCREMENT,
 	capacitateMaxima SMALLINT(4) NOT NULL
 	
@@ -61,7 +61,7 @@ CREATE TABLE tblFacturi (
 	userID SMALLINT(5) NOT NULL,
 	bazarID SMALLINT(2) NOT NULL,
 	suma MEDIUMINT NOT NULL,
-	tipFactura ENUM("cumparare","vanzare"),
+	tipFactura VARCHAR(9),
 	
 	FOREIGN KEY (userID) REFERENCES tblUseri(idUser) ON DELETE CASCADE ON UPDATE CASCADE,
 	FOREIGN KEY (bazarID) REFERENCES tblBazaruri(idBazar) ON DELETE CASCADE ON UPDATE CASCADE
@@ -72,10 +72,10 @@ CREATE TABLE tblFacturi (
 
 
 
-/*#############################################################*/
+/*###################a##########################################*/
 /*         PARTEA 3 - INSERAREA INREGISTRARILOR IN TABELE      */
 
-LOAD DATA INFILE 'C:/wamp64/tmp/UserData.csv'
+LOAD DATA INFILE 'C:/wamp64/tmp/UserData.txt'
  INTO TABLE bazarAutoDB.tblUseri
  FIELDS TERMINATED BY ',' 
  LINES TERMINATED BY '\n' 
@@ -97,7 +97,7 @@ LOAD DATA INFILE 'C:/wamp64/tmp/UpdatedCarsData.csv'
 
 
 
-LOAD DATA INFILE 'C:/wamp64/tmp/Invoice.csv'
+LOAD DATA INFILE 'C:/wamp64/tmp/Invoice.txt'
  INTO TABLE bazarAutoDB.tblFacturi 
  FIELDS TERMINATED BY ',' 
  LINES TERMINATED BY '\n' 
