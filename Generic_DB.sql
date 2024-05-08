@@ -1,4 +1,4 @@
-# SOURCE C:/Users/alexa/OneDrive/Desktop/Facultate/anu2/sem2/BD/proiect_bd/script01.sql;
+# SOURCE C:/Users/alexa/OneDrive/Desktop/Facultate/anu2/sem2/BD/proiect_bd/de_pe_git/Generic_DB.sql;
 /*          Folositi pentru cale simbolul "/", NU "\"         */ 
 
 
@@ -22,12 +22,12 @@ CREATE TABLE tblUseri (
 	parola VARCHAR(30) NOT NULL,
 	nume VARCHAR(20) NOT NULL,
 	prenume VARCHAR(50) NOT NULL,
-	cnp VARCHAR(13) NOT NULL UNIQUE
+	cnp VARCHAR(13) /*NOT NULL UNIQUE*/
 );
 
 CREATE TABLE tblBazaruri (
 	judet VARCHAR(50) NOT NULL UNIQUE,
-	adresa VARCHAR(50) NOT NULL,
+	adresa VARCHAR(50) NOT NULL UNIQUE,
 	idBazar SMALLINT(2) PRIMARY KEY AUTO_INCREMENT,
 	capacitateMaxima SMALLINT(4) NOT NULL
 	
@@ -40,7 +40,7 @@ CREATE TABLE tblMasini (
 	kilometraj MEDIUMINT(7) NOT NULL,
 	pretEuro MEDIUMINT NOT NULL,
 	nrInmatriculare VARCHAR(10) NOT NULL UNIQUE,
-	vin VARCHAR(17) PRIMARY KEY,
+	vin VARCHAR(40) PRIMARY KEY,
 	codBazar SMALLINT(2) NOT NULL,
 	
 	FOREIGN KEY (codBazar) REFERENCES tblBazaruri(idBazar) ON DELETE CASCADE ON UPDATE CASCADE
@@ -57,11 +57,11 @@ CREATE TABLE tblTranzactii (
 
 CREATE TABLE tblFacturi (
 	idFactura SMALLINT(5) PRIMARY KEY AUTO_INCREMENT,
-	dataFactura DATE NOT NULL,
+	dataFactura /*DATE*/ VARCHAR(15) NOT NULL,
 	userID SMALLINT(5) NOT NULL,
 	bazarID SMALLINT(2) NOT NULL,
 	suma MEDIUMINT NOT NULL,
-	tipFactura VARCHAR(9),
+	tipFactura VARCHAR(20)/*ENUM("cumparare", "vanzare")*/,
 	
 	FOREIGN KEY (userID) REFERENCES tblUseri(idUser) ON DELETE CASCADE ON UPDATE CASCADE,
 	FOREIGN KEY (bazarID) REFERENCES tblBazaruri(idBazar) ON DELETE CASCADE ON UPDATE CASCADE
@@ -72,23 +72,23 @@ CREATE TABLE tblFacturi (
 
 
 
-/*###################a##########################################*/
+/*#############################################################*/
 /*         PARTEA 3 - INSERAREA INREGISTRARILOR IN TABELE      */
 
-LOAD DATA INFILE 'C:/wamp64/tmp/UserData.txt'
+LOAD DATA INFILE 'E:/wamp64/tmp/UserData.csv'
  INTO TABLE bazarAutoDB.tblUseri
  FIELDS TERMINATED BY ',' 
  LINES TERMINATED BY '\n' 
  (idUser, parola, nume, prenume, cnp);
 
-LOAD DATA INFILE 'C:/wamp64/tmp/Bazaar.csv'
+LOAD DATA INFILE 'E:/wamp64/tmp/Bazaar.csv'
  INTO TABLE bazarAutoDB.tblBazaruri 
  FIELDS TERMINATED BY ',' 
  LINES TERMINATED BY '\n' 
  (judet, adresa, idBazar, capacitateMaxima); 
 
 
-LOAD DATA INFILE 'C:/wamp64/tmp/UpdatedCarsData.csv'
+LOAD DATA INFILE 'E:/wamp64/tmp/UpdatedCarsData.csv'
  INTO TABLE bazarAutoDB.tblMasini 
  FIELDS TERMINATED BY ',' 
  LINES TERMINATED BY '\n' 
@@ -97,11 +97,11 @@ LOAD DATA INFILE 'C:/wamp64/tmp/UpdatedCarsData.csv'
 
 
 
-LOAD DATA INFILE 'C:/wamp64/tmp/Invoice.txt'
+LOAD DATA INFILE 'E:/wamp64/tmp/Invoice.csv'
  INTO TABLE bazarAutoDB.tblFacturi 
  FIELDS TERMINATED BY ',' 
  LINES TERMINATED BY '\n' 
- (idFactura, dataFactura, userID, bazarID, suma, tipFactura);  
+ (idFactura, dataFactura, userID, bazarID, suma, tipFactura);
 
 
 /*#############################################################*/
@@ -116,3 +116,9 @@ DESCRIBE tblBazaruri;
 DESCRIBE tblMasini;
 DESCRIBE tblTranzactii;
 DESCRIBE tblFacturi;
+
+#SELECT * FROM tblBazaruri;
+#SELECT * FROM tblUseri;
+#SELECT * FROM tblMasini;
+#SELECT * FROM tblTranzactii;
+#SELECT * FROM tblFacturi;
