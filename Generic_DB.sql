@@ -39,9 +39,9 @@ CREATE TABLE tblMasini (
 	anFabricatie YEAR,
 	kilometraj MEDIUMINT(7) NOT NULL,
 	pretEuro MEDIUMINT NOT NULL,
-	codBazar SMALLINT(2) NOT NULL,
 	nrInmatriculare VARCHAR(10) NOT NULL UNIQUE,
 	vin VARCHAR(17) PRIMARY KEY,
+	codBazar SMALLINT(2) NOT NULL,
 	
 	FOREIGN KEY (codBazar) REFERENCES tblBazaruri(idBazar) ON DELETE CASCADE ON UPDATE CASCADE
 );
@@ -75,19 +75,11 @@ CREATE TABLE tblFacturi (
 /*#############################################################*/
 /*         PARTEA 3 - INSERAREA INREGISTRARILOR IN TABELE      */
 
-
 LOAD DATA INFILE /*!!!LOAD YOUR OWN USER DATA!!!*/
  INTO TABLE bazarAutoDB.tblUseri
  FIELDS TERMINATED BY ',' 
  LINES TERMINATED BY '\n' 
- (nume, prenume, cnp, parola, idUser);
- 
-LOAD DATA INFILE /*!!!LOAD YOUR OWN CARS DATA!!!*/
- INTO TABLE bazarAutoDB.tblMasini 
- FIELDS TERMINATED BY ',' 
- LINES TERMINATED BY '\n' 
- (marca, model, anFabricatie, km, pretEuro, sellerID, nrInmatriculare, vin);  
-#Brand,Model,YearOfFabrication,Kilometres,PriceEuro,SellerID,LicensePlateNumber,VIN
+ (idUser, parola, nume, prenume, cnp);
 
 LOAD DATA INFILE /*!!!LOAD YOUR OWN DEALERSHIPS DATA!!!*/
  INTO TABLE bazarAutoDB.tblBazaruri 
@@ -95,11 +87,21 @@ LOAD DATA INFILE /*!!!LOAD YOUR OWN DEALERSHIPS DATA!!!*/
  LINES TERMINATED BY '\n' 
  (judet, adresa, idBazar, capacitateMaxima); 
 
+
+LOAD DATA INFILE /*!!!LOAD YOUR OWN CARS DATA!!!*/
+ INTO TABLE bazarAutoDB.tblMasini 
+ FIELDS TERMINATED BY ',' 
+ LINES TERMINATED BY '\n' 
+ (marca, model, anFabricatie, kilometraj, pretEuro, nrInmatriculare, vin, codBazar);  
+#Brand,Model,YearOfFabrication,Kilometres,PriceEuro,,LicensePlateNumber,VIN
+
+
+
 LOAD DATA INFILE /*!!!LOAD YOUR OWN INVOICE DATA!!!*/
  INTO TABLE bazarAutoDB.tblFacturi 
  FIELDS TERMINATED BY ',' 
  LINES TERMINATED BY '\n' 
- (judet, adresa, idBazar, capacitateMaxima);  
+ (idFactura, dataFactura, userID, bazarID, suma, tipFactura);  
 
 
 /*#############################################################*/
@@ -114,9 +116,3 @@ DESCRIBE tblBazaruri;
 DESCRIBE tblMasini;
 DESCRIBE tblTranzactii;
 DESCRIBE tblFacturi;
-
-SELECT * FROM tblBazaruri;
-SELECT * FROM tblUseri;
-SELECT * FROM tblMasini;
-SELECT * FROM tblTranzactii;
-SELECT * FROM tblFacturi;
