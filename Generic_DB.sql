@@ -75,20 +75,20 @@ CREATE TABLE tblFacturi (
 /*#############################################################*/
 /*         PARTEA 3 - INSERAREA INREGISTRARILOR IN TABELE      */
 
-LOAD DATA INFILE /*!!!LOAD YOUR OWN USER DATA!!!*/
+LOAD DATA INFILE 'C:/wamp64/tmp/UserData.csv'
  INTO TABLE bazarAutoDB.tblUseri
  FIELDS TERMINATED BY ',' 
  LINES TERMINATED BY '\n' 
  (idUser, parola, nume, prenume, cnp);
 
-LOAD DATA INFILE /*!!!LOAD YOUR OWN DEALERSHIPS DATA!!!*/
+LOAD DATA INFILE 'C:/wamp64/tmp/Bazaar.csv'
  INTO TABLE bazarAutoDB.tblBazaruri 
  FIELDS TERMINATED BY ',' 
  LINES TERMINATED BY '\n' 
  (judet, adresa, idBazar, capacitateMaxima); 
 
 
-LOAD DATA INFILE /*!!!LOAD YOUR OWN CARS DATA!!!*/
+LOAD DATA INFILE 'C:/wamp64/tmp/UpdatedCarsData.csv'
  INTO TABLE bazarAutoDB.tblMasini 
  FIELDS TERMINATED BY ',' 
  LINES TERMINATED BY '\n' 
@@ -97,7 +97,7 @@ LOAD DATA INFILE /*!!!LOAD YOUR OWN CARS DATA!!!*/
 
 
 
-LOAD DATA INFILE /*!!!LOAD YOUR OWN INVOICE DATA!!!*/
+LOAD DATA INFILE 'C:/wamp64/tmp/Invoice.csv'
  INTO TABLE bazarAutoDB.tblFacturi 
  FIELDS TERMINATED BY ',' 
  LINES TERMINATED BY '\n' 

@@ -1,43 +1,42 @@
-Judet,Adresa,ID,MaximumCapacity
-Alba,"Bulevardul Eroilor, Alba",1,987
-Arad,"Strada 1 Decembrie, Arad",2,717
-Arges,"Bulevardul Decebal, Arges",3,806
-Bacau,"Bulevardul Tomis, Bacau",4,704
-Bihor,"Strada Aleea Florilor, Bihor",5,750
-Bistrita-Nasaud,"Bulevardul Carol I, Bistrita-Nasaud",6,920
-Botosani,"Bulevardul Carol I, Botosani",7,835
-Braila,"Bulevardul Revolutiei, Braila",8,789
-Brasov,"Bulevardul Alexandru Ioan Cuza, Brasov",9,756
-Bucuresti,"Strada Principala, Bucuresti",10,755
-Buzau,"Strada Libertatii, Buzau",11,888
-Calarasi,"Strada Traian, Calarasi",12,724
-Caras-Severin,"Bulevardul Eroilor, Caras-Severin",13,933
-Cluj,"Strada Victoriei, Cluj",14,831
-Constanta,"Bulevardul Unirii, Constanta",15,792
-Covasna,"Bulevardul Revolutiei, Covasna",16,853
-Dambovita,"Bulevardul Tomis, Dambovita",17,939
-Dolj,"Bulevardul Carol I, Dolj",18,813
-Galati,"Bulevardul Tomis, Galati",19,860
-Giurgiu,"Strada Libertatii, Giurgiu",20,982
-Gorj,"Strada Dorobantilor, Gorj",21,865
-Harghita,"Bulevardul Carol I, Harghita",22,876
-Hunedoara,"Bulevardul Decebal, Hunedoara",23,790
-Ialomita,"Strada Victoriei, Ialomita",24,769
-Iasi,"Bulevardul Tomis, Iasi",25,758
-Ilfov,"Bulevardul Decebal, Ilfov",26,751
-Maramures,"Bulevardul Decebal, Maramures",27,831
-Mehedinti,"Bulevardul Republicii, Mehedinti",28,977
-Mures,"Bulevardul Unirii, Mures",29,755
-Neamt,"Bulevardul Eroilor, Neamt",30,994
-Olt,"Bulevardul Unirii, Olt",31,733
-Prahova,"Strada Stefan cel Mare, Prahova",32,823
-Salaj,"Strada 1 Decembrie, Salaj",33,778
-Satu Mare,"Bulevardul Carol I, Satu Mare",34,914
-Sibiu,"Bulevardul Decebal, Sibiu",35,735
-Suceava,"Strada Stefan cel Mare, Suceava",36,795
-Teleorman,"Bulevardul Unirii, Teleorman",37,852
-Timis,"Bulevardul Independentei, Timis",38,779
-Tulcea,"Bulevardul Tomis, Tulcea",39,708
-Valcea,"Bulevardul Eroilor, Valcea",40,919
-Vaslui,"Strada Victoriei, Vaslui",41,874
-Vrancea,"Bulevardul Decebal, Vrancea",42,838
+Alba,Bulevardul Tomis Alba,1,972
+Arad,Strada Mihai Viteazu Arad,2,974
+Argeș,Bulevardul Carol I Argeș,3,729
+Bacău,Strada Stefan cel Mare Bacău,4,864
+Bihor,Strada Cuza Voda Bihor,5,990
+Bistrița-Năsăud,Strada Crangului Bistrița-Năsăud,6,992
+Botoșani,Strada Cuza Voda Botoșani,7,846
+Brașov,Bulevardul Tomis Brașov,8,742
+Brăila,Bulevardul Unirii Brăila,9,975
+București,Strada Traian București,10,988
+Buzău,Strada Principala Buzău,11,710
+Caraș-Severin,Bulevardul Tomis Caraș-Severin,12,981
+Călărași,Strada Principala Călărași,13,928
+Cluj,Bulevardul Alexandru Ioan Cuza Cluj,14,818
+Constanța,Strada Principala Constanța,15,751
+Covasna,Bulevardul Alexandru Ioan Cuza Covasna,16,709
+Dâmbovița,Strada Stefan cel Mare Dâmbovița,17,713
+Dolj,Bulevardul Independentei Dolj,18,947
+Galați,Strada Principala Galați,19,795
+Giurgiu,Strada Cuza Voda Giurgiu,20,710
+Gorj,Bulevardul Unirii Gorj,21,814
+Harghita,Strada Traian Harghita,22,939
+Hunedoara,Strada Crangului Hunedoara,23,847
+Ialomița,Bulevardul Unirii Ialomița,24,894
+Iași,Bulevardul Alexandru Ioan Cuza Iași,25,927
+Ilfov,Strada Stefan cel Mare Ilfov,26,904
+Maramureș,Strada Principala Maramureș,27,748
+Mehedinți,Strada Mihai Viteazu Mehedinți,28,850
+Mureș,Strada Cuza Voda Mureș,29,802
+Neamț,Strada 1 Decembrie Neamț,30,767
+Olt,Strada Traian Olt,31,776
+Prahova,Bulevardul Revolutiei Prahova,32,910
+Satu Mare,Strada Dorobantilor Satu Mare,33,988
+Sălaj,Bulevardul Revolutiei Sălaj,34,741
+Sibiu,Strada Mihai Viteazu Sibiu,35,777
+Suceava,Bulevardul Tomis Suceava,36,776
+Teleorman,Bulevardul Tomis Teleorman,37,773
+Timiș,Bulevardul Eroilor Timiș,38,805
+Tulcea,Strada Crangului Tulcea,39,775
+Vaslui,Bulevardul Carol I Vaslui,40,842
+Vâlcea,Strada Libertatii Vâlcea,41,950
+Vrancea,Strada 1 Decembrie Vrancea,42,865
